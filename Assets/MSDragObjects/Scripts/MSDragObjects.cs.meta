@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 310936c5c0744094ebfd703dbaafcb3f
+timeCreated: 1487032612
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - closedHandTexture: {fileID: 2800000, guid: 7048d9cb282cef44f9a7a68ac96d56f7, type: 3}
+  - openHandTexture: {fileID: 2800000, guid: 767e416478fa8824082b812500d97582, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
