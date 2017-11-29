@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GearVR Basic Interactions", "GearVR Basic Interactions.csproj", "{466E6C31-36E5-8AD4-223E-F88A54662CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GearVR Basic Interactions.Editor", "GearVR Basic Interactions.Editor.csproj", "{34060F46-1177-5B38-0967-E9B42C0413CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{466E6C31-36E5-8AD4-223E-F88A54662CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466E6C31-36E5-8AD4-223E-F88A54662CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466E6C31-36E5-8AD4-223E-F88A54662CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466E6C31-36E5-8AD4-223E-F88A54662CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34060F46-1177-5B38-0967-E9B42C0413CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34060F46-1177-5B38-0967-E9B42C0413CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34060F46-1177-5B38-0967-E9B42C0413CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34060F46-1177-5B38-0967-E9B42C0413CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

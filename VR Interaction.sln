@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR Interaction", "VR Interaction.csproj", "{2E41FB05-DFB3-0274-C9A0-988433C6CBAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VR Interaction.Editor", "VR Interaction.Editor.csproj", "{B99D1D68-675E-6F2C-35F0-2AB12927B14C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E41FB05-DFB3-0274-C9A0-988433C6CBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E41FB05-DFB3-0274-C9A0-988433C6CBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E41FB05-DFB3-0274-C9A0-988433C6CBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E41FB05-DFB3-0274-C9A0-988433C6CBAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99D1D68-675E-6F2C-35F0-2AB12927B14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99D1D68-675E-6F2C-35F0-2AB12927B14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99D1D68-675E-6F2C-35F0-2AB12927B14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99D1D68-675E-6F2C-35F0-2AB12927B14C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
