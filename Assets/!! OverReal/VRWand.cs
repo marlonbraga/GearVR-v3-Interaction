@@ -21,7 +21,7 @@ public class VRWand:MonoBehaviour {
 		RaycastHit hit;
 		if(!Physics.Raycast(ray, out hit, 100))
 			Debug.LogError("VR Wand does not Raycasting. Check layers");
-		if(hit.collider.gameObject != cursor) {
+		if(hit.collider.gameObject != cursor){
 			Debug.DrawLine(ray.origin, hit.point, Color.green);
 			cursorMaterial.color = Color.green;
 			if(hit.collider.tag == "InteractiveObject") {
