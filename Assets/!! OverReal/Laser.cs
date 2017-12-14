@@ -25,7 +25,8 @@ public class Laser : MonoBehaviour {
 		lineRenderer.endWidth = LarguraFinal;
 		lineRenderer.positionCount=2;
 	}
-	void Update(){
+	//Instantiate(bulletTexture[Random.Range(0,3)], hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+	void LateUpdate(){
 		if (ligado == true) {
 			luzColisao.SetActive(true);
 			Vector3 PontoFinalDoLaser = transform.position + transform.forward * DistanciaDoLaser;
@@ -34,11 +35,12 @@ public class Laser : MonoBehaviour {
 			if (Physics.Raycast(transform.position, transform.forward, out PontoDeColisao, DistanciaDoLaser)) {
 				GetComponent<LineRenderer>().SetPosition(1, PontoDeColisao.point);
 				wandLight = (PontoDeColisao.point - transform.position);
-				luzColisao.transform.position = (PontoDeColisao.point - wandLight / 30);
+				//luzColisao.transform.position = (PontoDeColisao.point - wandLight / (Vector3.Distance(PontoDeColisao.point, transform.position)* 350));
+				luzColisao.transform.position = PontoDeColisao.point + PontoDeColisao.normal/50;
 			} else {
 				GetComponent<LineRenderer>().SetPosition(1, PontoFinalDoLaser);
 				wandLight = (PontoFinalDoLaser - transform.position);
-				luzColisao.transform.position = (PontoFinalDoLaser - wandLight / 30);
+				luzColisao.transform.position = (PontoFinalDoLaser - wandLight / 1);
 			}
 		} else {
 			GetComponent<LineRenderer>().SetPosition(1, transform.position);

@@ -163,7 +163,7 @@ public class MSDragObjects:MonoBehaviour {
 					break;
 			}
 			//
-			if((Input.GetKeyDown(KeyToMove) && canMove) && (!OVRInput.GetDown(OVRInput.Button.One))) {
+			if((Input.GetKeyDown(KeyToMove) && canMove) || (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && canMove)) {
 				if(tempHit.rigidbody) {
 					switch(TypeOfMovement) {
 						case TypeMove.position:
@@ -198,7 +198,7 @@ public class MSDragObjects:MonoBehaviour {
 			rbTemp = null;
 			isMoving = false;
 		}
-		if((Input.GetKeyUp(KeyToMove) && tempObject) && (!OVRInput.GetUp(OVRInput.Button.One))) {
+		if((Input.GetKeyUp(KeyToMove) && tempObject) || (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && tempObject)) {
 			rbTemp.useGravity = true;
 			tempObject = null;
 			rbTemp = null;

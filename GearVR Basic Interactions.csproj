@@ -238,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\!! OverReal\Box.cs" />
+    <Compile Include="Assets\!! OverReal\ButtonsAlert.cs" />
     <Compile Include="Assets\!! OverReal\InteractiveObject.cs" />
     <Compile Include="Assets\!! OverReal\Laser.cs" />
     <Compile Include="Assets\!! OverReal\VRWand.cs" />
