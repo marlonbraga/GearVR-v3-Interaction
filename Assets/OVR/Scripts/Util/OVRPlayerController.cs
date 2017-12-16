@@ -237,8 +237,8 @@ public class OVRPlayerController:MonoBehaviour {
 			dpad_move = true;
 		}
 
-		//OverLibs
-		if((OVRInput.Get(OVRInput.Touch.PrimaryTouchpad) && (!OVRInput.Get(OVRInput.Button.One)))) {
+		//OverLib
+		if(OVRInput.Get(OVRInput.Touch.PrimaryTouchpad) && (!OVRInput.Get(OVRInput.Button.One)) && (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))) {
 
 			if(OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad)) {
 				initialtouchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);

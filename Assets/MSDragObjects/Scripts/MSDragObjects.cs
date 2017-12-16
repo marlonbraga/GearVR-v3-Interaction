@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class MSDragObjects:MonoBehaviour {
@@ -32,12 +33,12 @@ public class MSDragObjects:MonoBehaviour {
 	public enum TypeMove { position, velocity, addForce };
 	[Space(15), Tooltip("Here it is possible to decide the type of movement that the script will make to the rigid body of the objects that can be moved, so that the system adapts better to several situations.")]
 	public TypeMove TypeOfMovement = TypeMove.addForce;
-	[Range(1.0f, 5.0f)]
+	[Range(0.1f, 5.0f)]
 	[Tooltip("The closest you can bring your player's camera object.")]
-	public float minDistance = 2.5f;
-	[Range(5.0f, 9.0f)]
+	public float minDistance = 0.5f;
+	[Range(0.2f, 9.0f)]
 	[Tooltip("As far as you can bring your player's camera object.")]
-	public float maxDistance = 6;
+	public float maxDistance = 1;
 	[Range(1.0f, 10.0f)]
 	[Tooltip("The speed at which the object can be moved.")]
 	public float speedOfMovement = 5;
@@ -74,6 +75,8 @@ public class MSDragObjects:MonoBehaviour {
 	GameObject tempObject;
 	public static bool rotatingObject;
 	Camera mainCamera;
+	private Vector2 initialtouchPosition = Vector2.zero;
+	private bool distanceChange = false;
 
 	void Awake() {
 		distance = (minDistance + maxDistance) / 2;
@@ -186,8 +189,32 @@ public class MSDragObjects:MonoBehaviour {
 		} else {
 			canMove = false;
 		}
-		distance += Input.GetAxis("Mouse ScrollWheel") * speedScrool;
-		distance = Mathf.Clamp(distance, minDistance, maxDistance);
+
+		//OverLib - Distance
+		if((OVRInput.Get(OVRInput.Touch.PrimaryTouchpad) && (!OVRInput.Get(OVRInput.Button.One)))) {
+
+			if(OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad)) {
+				initialtouchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+			} else if(OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad)) {
+				initialtouchPosition = Vector2.zero;
+			}
+			Vector2 touchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+			Vector2 resultPosition = touchPosition - initialtouchPosition;
+
+			float deadZone = 0.3f;
+			if(resultPosition.y > deadZone) {
+				distanceChange = true;
+			} else if(resultPosition.y < -deadZone) {
+				distanceChange = true;
+			} else {
+				distanceChange = false;
+			}
+			if(distanceChange) {
+				distance += resultPosition.y * speedScrool;
+				distance = Mathf.Clamp(distance, minDistance, maxDistance);
+			}
+		}
+		
 		if(tempObject) {
 			rbTemp = tempObject.GetComponent<Rigidbody>();
 		}

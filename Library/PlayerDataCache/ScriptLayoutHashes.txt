@@ -220,6 +220,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+838db2b74a94f1797d7dcd74e2b7d62d Assembly-CSharp.dll:.ButtonsAlert
 58ea3d098767841a0513b059573cfc16 Assembly-CSharp.dll:.ONSPAmbisonicsNative
 783bf6d659235f53a950684dd61ab5b9 Assembly-CSharp.dll:.MouseLook
 7b7745d8d1ab7fe13f98bfffbf52c18d Assembly-CSharp.dll:.OVRWaitCursor
@@ -303,4 +304,4 @@ a9e1c36c671666e79706791e556d5100 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehav
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
-88daaa5492ae1ceb0dcdb35efd9c5185 Assembly-CSharp.dll:.ButtonsAlert
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ButtonSphere

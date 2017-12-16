@@ -237,11 +237,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\!! OverReal\Box.cs" />
-    <Compile Include="Assets\!! OverReal\ButtonsAlert.cs" />
-    <Compile Include="Assets\!! OverReal\InteractiveObject.cs" />
-    <Compile Include="Assets\!! OverReal\Laser.cs" />
-    <Compile Include="Assets\!! OverReal\VRWand.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\Box.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\ButtonsAlert.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\ButtonSphere.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\Laser.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\VRWand.cs" />
     <Compile Include="Assets\MSDragObjects\Example\PlayerController.cs" />
     <Compile Include="Assets\MSDragObjects\Scripts\MSDragObjects.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AchievementType.cs" />
