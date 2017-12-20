@@ -30,8 +30,7 @@ using System;
 public class OVRPlayerController:MonoBehaviour {
 	//apaga-me
 	public TextMesh textmesh;
-
-
+	
 	/// <summary>
 	/// The rate acceleration during movement.
 	/// </summary>
@@ -242,7 +241,7 @@ public class OVRPlayerController:MonoBehaviour {
 
 			if(OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad)) {
 				initialtouchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
-			}else if(OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad)) {
+			} else if(OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad)) {
 				initialtouchPosition = Vector2.zero;
 			}
 			Vector2 touchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
@@ -252,21 +251,29 @@ public class OVRPlayerController:MonoBehaviour {
 			if(resultPosition.y > deadZone) {
 				moveForward = true;
 				dpad_move = true;
+				MoveScale = Math.Min(Math.Abs(resultPosition.y), 1f);
 			} else if(resultPosition.y < -deadZone) {
 				moveBack = true;
 				dpad_move = true;
+				MoveScale = Math.Min(Math.Abs(resultPosition.y), 1f);
 			}
-			MoveScale = Math.Min(Math.Abs(resultPosition.y),1f);
+			if(resultPosition.x > deadZone) {
+				moveRight = true;
+				dpad_move = true;
+				MoveScale = Math.Min(Math.Abs(resultPosition.x), 1f);
+			} else if(resultPosition.x < -deadZone) {
+				moveLeft = true;
+				dpad_move = true;
+				MoveScale = Math.Min(Math.Abs(resultPosition.x), 1f);
+			}
 
-			string text =	"| initialPosition: "+ initialtouchPosition+
-							"\n| touchPosition:   "+touchPosition+
-							"\n| resultPosition:  "+resultPosition+
-							"\n| moveScale:       "+ MoveScale;
+			string text = "| initialPosition: " + initialtouchPosition +
+							"\n| touchPosition:   " + touchPosition +
+							"\n| resultPosition:  " + resultPosition +
+							"\n| moveScale:       " + MoveScale;
 			textmesh.text = text;
 		}
-
-		//MoveScale = 1.0f;
-
+		
 		if((moveForward && moveLeft) || (moveForward && moveRight) ||
 			 (moveBack && moveLeft) || (moveBack && moveRight))
 			MoveScale = 0.70710678f;
@@ -348,7 +355,7 @@ public class OVRPlayerController:MonoBehaviour {
 
 		euler.y += secondaryAxis.x * rotateInfluence;
 
-		transform.rotation = Quaternion.Euler(euler);
+		//transform.rotation = Quaternion.Euler(euler);
 	}
 
 	/// <summary>

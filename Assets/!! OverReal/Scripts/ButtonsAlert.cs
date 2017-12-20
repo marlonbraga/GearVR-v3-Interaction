@@ -21,26 +21,39 @@ public class ButtonsAlert:MonoBehaviour {
 	private Color buttonColorPress;
 	private Color buttonColorOver;
 	void Start() {
-		buttonColor = new Color(0.2f, 0.2f, 0.2f, 1f);
-		buttonColorPress = new Color(1, 0.73f, 0, 0.7f);
-		buttonColorOver = new Color(1, 0.73f, 0, 0.3f);
-
 		m_backButton = backButton.GetComponent<MeshRenderer>().material;
 		m_homeButton = homeButton.GetComponent<MeshRenderer>().material;
 		m_centerButton = centerButton.GetComponent<MeshRenderer>().material;
 		m_discButton = discButton.GetComponent<MeshRenderer>().material;
 		m_triggerButton = triggerButton.GetComponent<MeshRenderer>().material;
-		//m_chassisButton = chassisButton.GetComponent<MeshRenderer>().material;
+
+		buttonColor = m_discButton.color;
+		buttonColorPress = transform.parent.GetComponent<Laser>().GetLaserColor();
+		buttonColorOver = new Color(0.1f, 0.1f, 0.1f, 0.8f);
 	}
 
 	void Update() {
+		if(OVRInput.Get(OVRInput.Button.Any) || OVRInput.Get(OVRInput.Touch.Any)) {
+			buttonColorPress = transform.parent.GetComponent<Laser>().GetLaserColor();
+			buttonColorPress = new Color(
+				buttonColorPress.r,
+				buttonColorPress.g,
+				buttonColorPress.b,
+				1.0f);
+			buttonColorOver = new Color(
+				buttonColorPress.r,
+				buttonColorPress.g,
+				buttonColorPress.b,
+				buttonColorPress.a - 0.3f);
+			Debug.Log("ButtonsAlert/buttonColorPress: " + buttonColorPress + "| GetLaserColor(): " + transform.parent.GetComponent<Laser>().GetLaserColor());
+		}
 		if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
 			m_triggerButton.color = buttonColorPress;
 		else
 			m_triggerButton.color = buttonColor;
 		if(OVRInput.Get(OVRInput.Touch.PrimaryTouchpad) || Input.GetKey(KeyCode.Alpha1))
 			m_discButton.color = buttonColorOver;
-		else{
+		else {
 			m_discButton.color = buttonColor;
 		}
 		if(OVRInput.Get(OVRInput.Button.One) || Input.GetKey(KeyCode.Alpha2)) /*&& OVRInput.Get(OVRInput.Button.Start) && OVRInput.Get(OVRInput.Button.PrimaryTouchpad)*/
@@ -50,15 +63,13 @@ public class ButtonsAlert:MonoBehaviour {
 		else
 			m_backButton.color = buttonColor;
 
-
-
-		if(OVRInput.Get(OVRInput.Button.DpadRight))
-			m_homeButton.color = buttonColorOver;
-		else
-			m_homeButton.color = buttonColor;
-		if(OVRInput.Get(OVRInput.Button.PrimaryShoulder))
-			m_centerButton.color = buttonColorPress;
-		else
-			m_centerButton.color = buttonColor;
+		//if(OVRInput.Get(OVRInput.Button.DpadRight))
+		//	m_homeButton.color = buttonColorOver;
+		//else
+		//	m_homeButton.color = buttonColor;
+		//if(OVRInput.Get(OVRInput.Button.DpadLeft))
+		//	m_centerButton.color = buttonColorPress;
+		//else
+		//	m_centerButton.color = buttonColor;
 	}
 }
