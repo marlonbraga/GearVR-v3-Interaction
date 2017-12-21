@@ -8,6 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/!! OverReal/demo.unity
     guid: 2fd6e25f86ad2394595e0beef6346173
-  - enabled: 0
-    path: Assets/OVR/Scenes/Room.unity
-    guid: 54445976c1dbf1c49bb38ba7eba558e8
+  - enabled: 1
+    path: Assets/!! OverReal/demo OVR Code.unity
+    guid: 0a2523627bc5f80429f45498a87e110d

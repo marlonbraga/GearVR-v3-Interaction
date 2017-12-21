@@ -238,6 +238,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\!! OverReal\Scripts\ButtonsAlert.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\Floor.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\FootPrint.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\Equipament.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\InteractiveObject.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\Item.cs" />
@@ -246,6 +248,7 @@
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\ScenaryObject.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\SceneryObject\ButtonSphere.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\Laser.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\VRAvatar.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\VRWand.cs" />
     <Compile Include="Assets\MSDragObjects\Example\PlayerController.cs" />
     <Compile Include="Assets\MSDragObjects\Scripts\MSDragObjects.cs" />

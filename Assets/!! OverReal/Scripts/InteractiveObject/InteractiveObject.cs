@@ -8,11 +8,11 @@ abstract public class InteractiveObject:MonoBehaviour {
 	public AudioClip select;
 	public AudioClip click;
 
-	abstract public void LaserEnter(Laser laser);
-	abstract public void LaserExit(Laser laser);
-	abstract public void PointClick(Laser laser);
-	abstract public void PointPress(Laser laser);
-	abstract public void PointDepress(Laser laser);
+	virtual public void LaserEnter(RaycastHit hit) { }
+	virtual public void LaserExit() { }
+	virtual public void PointClick(Vector3 target) { }
+	virtual public void PointPress() { }
+	virtual public void PointDepress() { }
 
 	void Awake() {
 		if(gameObject.tag != "InteractiveObject") {

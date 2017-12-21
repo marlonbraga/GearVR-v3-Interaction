@@ -10,11 +10,11 @@ public class Box:MobileObject {
 		audiosource = GetComponent<AudioSource>();
 		status = Status.none;
 	}
-	override public void PointClick(Laser laser) {
+	override public void PointClick(Vector3 vector3) {
 		audiosource.clip = click;
 		audiosource.Play();
 	}
-	override public void PointPress(Laser laser) {
+	override public void PointPress() {
 		if(status != Status.selected) {
 			audiosource.clip = select;
 			audiosource.Play();
@@ -22,7 +22,7 @@ public class Box:MobileObject {
 		}
 		status = Status.selected;
 	}
-	override public void PointDepress(Laser laser) {
+	override public void PointDepress() {
 		status = Status.none;
 	}
 }

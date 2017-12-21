@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 
 public class Laser : MonoBehaviour {
+	public static Laser _Laser;
 	[SerializeField]
 	private Color corLaser;
 	public float DistanciaDoLaser = 5;
@@ -14,7 +15,8 @@ public class Laser : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	private Light colisionLight;
 	void Start() {
-		//DistanciaDoLaser = GetComponent<VRWand>().MaxDistance;
+		_Laser = this;
+
 		defaultColor = corLaser;
 
 		luzColisao = new GameObject();
@@ -23,7 +25,7 @@ public class Laser : MonoBehaviour {
 		colisionLight.bounceIntensity = 8;
 		colisionLight.range = LarguraFinal * 2;
 		colisionLight.intensity = 8;
-		//
+
 		lineRenderer = gameObject.AddComponent<LineRenderer>();
 		lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
 		lineRenderer.startWidth = LarguraInicial;
@@ -32,7 +34,6 @@ public class Laser : MonoBehaviour {
 
 		ChangeLaserColor(corLaser);
 	}
-	//Instantiate(bulletTexture[Random.Range(0,3)], hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
 	void LateUpdate(){
 		DrawLaser();
 	}
@@ -42,13 +43,9 @@ public class Laser : MonoBehaviour {
 		lineRenderer.startColor = color;
 		lineRenderer.endColor = color;
 		colisionLight.color = color;
-		//Debug.Log("Laser/ChangeLaserColor() - " + corLaser);
 	}
 	void DrawLaser() {
 		if(ligado == true) {
-			GetComponent<Laser>();
-			//lineRenderer.endColor = lineRenderer.startColor = colisionLight.color = corLaser;
-
 			luzColisao.SetActive(true);
 			Vector3 PontoFinalDoLaser = transform.position + transform.forward * DistanciaDoLaser;
 			RaycastHit PontoDeColisao;
@@ -56,7 +53,6 @@ public class Laser : MonoBehaviour {
 			if(Physics.Raycast(transform.position, transform.forward, out PontoDeColisao, DistanciaDoLaser)) {
 				GetComponent<LineRenderer>().SetPosition(1, PontoDeColisao.point);
 				wandLight = (PontoDeColisao.point - transform.position);
-				//luzColisao.transform.position = (PontoDeColisao.point - wandLight / (Vector3.Distance(PontoDeColisao.point, transform.position)* 350));
 				luzColisao.transform.position = PontoDeColisao.point + PontoDeColisao.normal / 50;
 			} else {
 				GetComponent<LineRenderer>().SetPosition(1, PontoFinalDoLaser);
@@ -71,7 +67,6 @@ public class Laser : MonoBehaviour {
 	}
 	public void ResetColor() {
 		ChangeLaserColor(defaultColor);
-		//Debug.Log("Laser/ResetColor() - "+ corLaser);
 	}
 	public Color GetLaserColor() {
 		return corLaser;
