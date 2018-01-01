@@ -12,14 +12,17 @@ public class VRAvatar:MonoBehaviour {
 	public bool canMove = false;
 	public AudioClip[] steps;
 	private AudioSource audioSource;
+	private Coroutine coroutine;
 	void Start() {
 		_VRAvatar = this;
-		StartCoroutine(Teleport(Vector3.zero));
 		audioSource = GetComponent<AudioSource>();
 	}
 	public void Movement(Vector3 newTarget) {
-		if(canMove)
-			StartCoroutine(Teleport(newTarget));
+		if(canMove) {
+			if(coroutine != null)
+				StopCoroutine(coroutine);
+			coroutine = StartCoroutine(Teleport(newTarget));
+		}
 	}
 	private IEnumerator Teleport(Vector3 newTarget) {
 		transform.position = newTarget;
