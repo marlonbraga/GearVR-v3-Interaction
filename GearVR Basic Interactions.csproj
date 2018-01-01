@@ -416,7 +416,6 @@
     <Compile Include="Assets\OVRAudioManager\Scripts\Utils\InspectorNoteAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\!! OverReal\Outline-Over.shader" />
     <None Include="Assets\LICENSE.txt" />
     <None Include="Assets\OSPNative\LICENSE.txt" />
     <None Include="Assets\OSPNative\THIRD_PARTY_NOTICES.txt" />
