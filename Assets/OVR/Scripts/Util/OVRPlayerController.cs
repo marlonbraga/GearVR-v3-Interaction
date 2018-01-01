@@ -271,7 +271,7 @@ public class OVRPlayerController:MonoBehaviour {
 							"\n| touchPosition:   " + touchPosition +
 							"\n| resultPosition:  " + resultPosition +
 							"\n| moveScale:       " + MoveScale;
-			textmesh.text = text;
+			//textmesh.text = text;
 		}
 		
 		if((moveForward && moveLeft) || (moveForward && moveRight) ||

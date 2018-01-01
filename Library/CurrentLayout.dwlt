@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 109
+  controlID: 157
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -91,10 +91,10 @@ MonoBehaviour:
     y: 0
     width: 581
     height: 520
-  m_MinSize: {x: 434, y: 271}
-  m_MaxSize: {x: 14004, y: 10021}
+  m_MinSize: {x: 438, y: 271}
+  m_MaxSize: {x: 14008, y: 10021}
   vertical: 0
-  controlID: 144
+  controlID: 53
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,8 +140,8 @@ MonoBehaviour:
     y: 0
     width: 581
     height: 947
-  m_MinSize: {x: 434, y: 392}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 438, y: 392}
+  m_MaxSize: {x: 14008, y: 14042}
   vertical: 1
   controlID: 52
 --- !u!114 &7
@@ -214,8 +214,8 @@ MonoBehaviour:
     y: 0
     width: 317
     height: 520
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -286,10 +286,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 913, y: 442}
-  m_MaxSize: {x: 22008, y: 14042}
+  m_MinSize: {x: 917, y: 442}
+  m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
-  controlID: 108
+  controlID: 51
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -511,9 +511,9 @@ MonoBehaviour:
     height: 499
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ccfa0000
-    m_LastClickedID: 64204
-    m_ExpandedIDs: 72d8f2ff34d9f2ff00ddf2ff12ddf2ff1206f4ffd406f4ff9e0af4ffb00af4ff2814f4ffea14f4ffb618f4ffc818f4ff60abf6ff22acf6ffeeaff6ff00b0f6ff400ffdff0810fdffd213fdffe413fdffb620fdff8221fdff4e25fdff6025fdff0e36fdffd836fdffa23afdffb43afdfffe40fdffc641fdff9245fdffa445fdff6a60fdff3661fdff0265fdff1465fdff2cc0fdfff8c0fdffc2c4fdffd4c4fdffc2cafdff8ccbfdff5ccffdff72cffdff3ae2fdfffae2fdff74e5fdffd4ecfdff92edfdff0cf0fdffe8f7fdffa4f8fdff1efbfdff2404feffe204feff5c07feffd20ffeff9010feff0c13feffae1ffeff6c20feffe622feffd033feff8c34feff0837feff5ceefeff20effeff9ef1feff10fefeffccfefeff5001ffff9cfbffff00000000782e0000f42e0000f82e0000482f0000522f0000702f00002a3000003e3c0000963c00005a410000da410000de410000324200003c4200000e430000b45200000e530000de6e0000d2790000527a0000567a0000ac7a0000b67a0000707f00007c7f0000ee7f00004a800000548000002c8100008a870000da940000b0a1000030a2000034a200008aa2000094a2000066a30000aad200002ad300002ed3000086d3000098d3000074d40000a0ec00002aed00002eed000086ed00008eed000098ed0000b6ed000074ee0000bcfa000038fb000094fb00009cfb0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 2e93f7ffd693f7ffa097f7ffb297f7ffd2a9f7ff98aaf7ff64aef7ff76aef7ffa2ccf7ff6ccdf7ff36d1f7ff48d1f7ff94d8f7ff5cd9f7ff28ddf7ff3addf7ff4631faff0a32faffd435faffe635faff483cfaff0a3dfaffd440faffe640faff524efaff124ffaffdc52faffee52faffcc65faff8e66faff586afaff6a6afaff0a78faffcc78faff967cfaffa87cfaff8685faff4886faff148afaff268afaffbea0faff80a1faff4aa5faff5ca5faffbcaefaff7caffaff48b3faff5ab3faff8e70feff4e71feff1e75feff3475feff9681feff5882feff2a86feff4286feff9cfbffff000000008c2e0000142f00001a2f0000702f0000822f000060300000aa3e0000343f0000383f0000903f0000a23f0000c03f00007e400000b0610000f28800007c89000080890000d8890000e0890000ea890000c68a000024a80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: FootPrint (1)
@@ -524,7 +524,7 @@ MonoBehaviour:
         y: 0
         width: 0
         height: 0
-      m_UserData: 60606
+      m_UserData: 35088
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d21c0000
     m_LastClickedID: 7378
-    m_ExpandedIDs: 000000001a2b0000282b00003a2b0000482b00007e2b0000862b0000ce2b0000f02b0000482c00007c2c0000862c0000ce2c0000162d0000562d0000ca2d0000ce2d0000e22d0000a2310000a4310000a6310000a8310000aa310000ac310000ae310000b0310000
+    m_ExpandedIDs: 00000000202b00002e2b0000402b00004e2b0000862b00008e2b0000ae2b0000d82b0000fc2b0000542c0000882c0000922c0000da2c0000222d0000622d0000d82d0000ee2d0000d8310000da310000dc310000de310000e0310000e2310000e4310000e6310000e8310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,21 +643,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 151}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001a2b0000282b00003a2b0000482b00007e2b0000862b0000a62b0000ce2b0000f02b0000482c00007c2c0000862c0000ce2c0000162d0000562d0000ca2d0000ce2d0000e22d0000a2310000a4310000a6310000a8310000aa310000ac310000ae310000b0310000
+    m_ExpandedIDs: 00000000202b00002e2b00004e2b0000862b00008e2b0000ae2b0000fc2b0000542c0000222d0000622d0000d82d0000ee2d0000d8310000da310000dc310000de310000e0310000e2310000e4310000e6310000e8310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: FootPrint
-      m_OriginalName: FootPrint
+      m_Name: VRAvatar
+      m_OriginalName: VRAvatar
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 55922
+      m_UserData: 2760
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -804,14 +804,14 @@ MonoBehaviour:
     width: 958
     height: 552
   m_SceneLighting: 1
-  lastFramingTime: 41667.22392151915
+  lastFramingTime: 246235.56631339047
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.13064647, y: 1.5370903, z: 2.8232057}
+    m_Target: {x: -3.0204666, y: -4.8655987, z: 2.432352}
     speed: 2
-    m_Value: {x: -0.13064647, y: 1.5370903, z: 2.8232057}
+    m_Value: {x: -3.0204666, y: -4.8655987, z: 2.432352}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -828,19 +828,19 @@ MonoBehaviour:
     yGrid:
       m_Target: 1
       speed: 2
-      m_Value: 1
+      m_Value: 0.94365704
     zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.28851593, y: -0.5433666, z: 0.20601441, w: 0.7609661}
+    m_Target: {x: 0.45020908, y: -0.39683634, z: 0.2335267, w: 0.7650477}
     speed: 2
-    m_Value: {x: 0.28851593, y: -0.5433666, z: 0.20601441, w: 0.7609661}
+    m_Value: {x: 0.45020908, y: -0.39683634, z: 0.2335267, w: 0.7650477}
   m_Size:
-    m_Target: 5.6387424
+    m_Target: 11.506396
     speed: 2
-    m_Value: 5.6387424
+    m_Value: 11.506396
   m_Ortho:
     m_Target: 0
     speed: 2
