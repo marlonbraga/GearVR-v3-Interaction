@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Box:MobileObject {
 	enum Status { none, selected }
 	private Status status;

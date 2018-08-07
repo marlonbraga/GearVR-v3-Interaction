@@ -503,6 +503,9 @@
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\CUSTOM\LASciFiPanel\_ChangeLog.txt" />
+    <None Include="Assets\CUSTOM\LASciFiPanel\_Instructions.txt" />
+    <None Include="Assets\CUSTOM\LASciFiPanel\_ProductFeatures.txt" />
     <None Include="Assets\LICENSE.txt" />
     <None Include="Assets\OSPNative\LICENSE.txt" />
     <None Include="Assets\OSPNative\THIRD_PARTY_NOTICES.txt" />

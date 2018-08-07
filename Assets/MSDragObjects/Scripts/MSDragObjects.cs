@@ -239,6 +239,7 @@ public class MSDragObjects:MonoBehaviour {
 			tempObject = null;
 			rbTemp = null;
 			isMoving = false;
+			GetComponent<AudioSource>().Play();
 		}
 		if(tempObject) {
 			if(Vector3.Distance(transform.position, tempObject.transform.position) > maxDistance) {
