@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
 public class MobileObject : InteractiveObject {
 	public bool statusSwitch = false;
 	public bool holding = false;
