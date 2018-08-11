@@ -330,6 +330,8 @@
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\SceneryObject\ButtonSphere.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\InteractiveObject\SceneryObject\ElevatorAutomatic.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\Laser.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\OculusController.cs" />
+    <Compile Include="Assets\!! OverReal\Scripts\VR_Controller.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\VRAvatar.cs" />
     <Compile Include="Assets\!! OverReal\Scripts\VRWand.cs" />
     <Compile Include="Assets\MSDragObjects\Example\PlayerController.cs" />

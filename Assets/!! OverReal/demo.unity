@@ -13137,17 +13137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310936c5c0744094ebfd703dbaafcb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionMode: 0
-  tagObjects: InteractiveObject
-  nameObjects: Cube
-  physicMaterialObjects: {fileID: 0}
   KeyToMove: 282
   KeyToThrowing: 49
   keyToRotate: 51
   hideTheMouse: 0
   setLayerInPlayer: 0
   _cursorLockMode: 0
-  TypeOfMovement: 2
   minDistance: 0.5
   maxDistance: 1.5
   speedOfMovement: 2
@@ -13155,8 +13150,7 @@ MonoBehaviour:
   speedScrool: 5
   throwingForce: 200
   moveForce: 300
-  closedHandTexture: {fileID: 2800000, guid: 7048d9cb282cef44f9a7a68ac96d56f7, type: 3}
-  openHandTexture: {fileID: 2800000, guid: 767e416478fa8824082b812500d97582, type: 3}
+  textMesh: {fileID: 1693760023}
 --- !u!114 &1380357330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18651,7 +18645,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh44846
+  m_Name: pb_Mesh21814
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -19315,15 +19309,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1693760022}
-  m_Text: 'initialPosition:
-
-    touchPosition:
-
-    resultPosition:
-
-    moveScale:
-
-'
+  m_Text: Lab da Over
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -21119,7 +21105,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh44882
+  m_Name: pb_Mesh34384
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

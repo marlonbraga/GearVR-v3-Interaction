@@ -40,6 +40,8 @@ public class MSDragObjects:MonoBehaviour {
 	[Tooltip("The force with which the object can be moved. This variable only takes effect if the selected motion type is 'AddForce'.")]
 	public float moveForce = 200;
 
+	public TextMesh textMesh;
+
 	bool canMove;
 	bool isMoving;
 	float distance;
@@ -49,7 +51,7 @@ public class MSDragObjects:MonoBehaviour {
 	RaycastHit tempHit;
 	Rigidbody rbTemp;
 	Vector3 rayEndPoint;
-	Vector3 velocity = Vector3.zero;
+	//Vector3 velocity = Vector3.zero;
 	Vector3 tempDirection;
 	Vector3 tempSpeed;
 	Vector3 direcAddForceMode;
@@ -60,6 +62,7 @@ public class MSDragObjects:MonoBehaviour {
 	private bool distanceChange = false;
 
 	void Awake() {
+		textMesh.text = "000";
 		distance = (minDistance + maxDistance) / 2;
 		mainCamera = Camera.main;
 		if(!mainCamera) {
@@ -78,23 +81,20 @@ public class MSDragObjects:MonoBehaviour {
 		}
 	}
 	bool IsMovementBlock() {
-		if(tempObject) {
+		if(tempObject) 
 			if(Physics.Raycast(transform.position, Vector3.down, out tempHit, 5))
 				if(tempHit.transform.GetComponent<MobileObject>() && tempObject.transform.gameObject == tempHit.transform.gameObject)
 					return true;
-		} 
 		return false;
 	}
 	void Update(){
 		rayEndPoint = transform.position + transform.forward * distance;
 		if(Physics.Raycast(transform.position, transform.forward, out tempHit, (maxDistance + 1))) {
-
 			if(Vector3.Distance(transform.position, tempHit.point) <= maxDistance && tempHit.transform.GetComponent<MobileObject>()) {
 				canMove = true;
 			} else {
 				canMove = false;
 			}
-
 			PointAndClick();
 		} else {
 			canMove = false;
@@ -118,14 +118,14 @@ public class MSDragObjects:MonoBehaviour {
 		MoveObject();
 	}
 	void TouchPad(){
-		if((OVRInput.Get(OVRInput.Touch.PrimaryTouchpad) && (!OVRInput.Get(OVRInput.Button.One)))) {
+		if((VR_Controller.isTouch() && (!VR_Controller.TouchButton()))) {
 			//READ TOUCHPAD
-			if(OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad)) {
-				initialtouchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
-			} else if(OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad)) {
+			if(VR_Controller.TouchGetDown()) {
+				initialtouchPosition = VR_Controller.TouchPoint();
+			} else if(VR_Controller.TouchGetUp()) {
 				initialtouchPosition = Vector2.zero;
 			}
-			Vector2 touchPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+			Vector2 touchPosition = VR_Controller.TouchPoint();
 			Vector2 resultPosition = touchPosition - initialtouchPosition;
 
 			//DEADZONE
@@ -147,7 +147,8 @@ public class MSDragObjects:MonoBehaviour {
 	}
 	//IS BUTTON PRESSED ??
 	void CheckButton(){
-		if((Input.GetKeyUp(KeyToMove) && tempObject) || (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && tempObject)) {
+		textMesh.text = VR_Controller.TriggerButton() + " \n " + canMove + " \n " + tempObject;
+		if((Input.GetKeyUp(KeyToMove) && tempObject) || (!VR_Controller.TriggerButton()) && tempObject) {	
 			rbTemp.useGravity = true;
 			tempObject = null;
 			rbTemp = null;
@@ -155,7 +156,7 @@ public class MSDragObjects:MonoBehaviour {
 		}
 	}
 	void Throwing(){
-		if((Input.GetKeyDown(KeyToThrowing) && tempObject) || (OVRInput.Get(OVRInput.Button.One) && (tempObject))) {
+		if((Input.GetKeyDown(KeyToThrowing) && tempObject) || (VR_Controller.TouchButton()) && (tempObject)) {
 			tempDirection = rayEndPoint - transform.position;
 			tempDirection.Normalize();
 			rbTemp.useGravity = true;
@@ -209,7 +210,7 @@ public class MSDragObjects:MonoBehaviour {
 		}
 	}
 	void PointAndClick() {
-		if((Input.GetKeyDown(KeyToMove) && canMove) || (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && canMove)) {
+		if((Input.GetKeyDown(KeyToMove) && canMove) || (VR_Controller.TriggerButtonDown() && canMove)) {
 			if(tempHit.rigidbody) {
 				tempHit.rigidbody.useGravity = true;
 				distance = Vector3.Distance(transform.position, tempHit.point);

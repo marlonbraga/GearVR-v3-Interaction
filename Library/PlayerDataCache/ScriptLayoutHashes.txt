@@ -177,7 +177,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
-1fc480d72b2c59e2dacad9b9dafebf6f Assembly-CSharp.dll:.MSDragObjects
+61d0bfcbb281940f457c92d4b6d4c29f Assembly-CSharp.dll:.MSDragObjects
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Oculus.Platform.StandalonePlatformSettings
 26215f135eeb48d8fa1189498c107f6c Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 0561521e336e270e6e5a9c61387cb838 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
@@ -260,6 +260,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 838db2b74a94f1797d7dcd74e2b7d62d Assembly-CSharp.dll:.ButtonsAlert
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OculusController
 58ea3d098767841a0513b059573cfc16 Assembly-CSharp.dll:.ONSPAmbisonicsNative
 783bf6d659235f53a950684dd61ab5b9 Assembly-CSharp.dll:.MouseLook
 7b7745d8d1ab7fe13f98bfffbf52c18d Assembly-CSharp.dll:.OVRWaitCursor
@@ -289,6 +290,7 @@ a8ed45ab553b07236625df6cc6ac449c Assembly-CSharp.dll:.OVRLint
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FootPrint
 6db8c5b9f4b3eac458f006e6b90a12dd Assembly-CSharp.dll:.VRWand
 2db25c4782f7d17f2d71bf5375fd6179 Assembly-CSharp.dll:.TestScript
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.VR_Controller
 26215f135eeb48d8fa1189498c107f6c Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 0561521e336e270e6e5a9c61387cb838 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 2e0fd93f459db951da0e2e94e2e33fb7 Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour
