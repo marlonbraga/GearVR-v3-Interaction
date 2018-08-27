@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class OculusController : VR_Controller {
 
-	//override public bool TriggerButton() {
-	//	if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
-	//		return true;
-	//	else
-	//		return false;
-	//}
+	override public bool TriggerButton() {
+		if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+			return true;
+		else
+			return false;
+	}
 	//override public bool TriggerButtonDown() {
 	//	if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
 	//		return true;

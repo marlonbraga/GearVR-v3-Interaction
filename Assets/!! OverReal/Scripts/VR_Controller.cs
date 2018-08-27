@@ -10,7 +10,7 @@ public class VR_Controller : MonoBehaviour {
 	}
 
 	#region GearVR
-	static public bool TriggerButton() {
+	virtual public bool TriggerButton() {
 		if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
 			return true;
 		else
