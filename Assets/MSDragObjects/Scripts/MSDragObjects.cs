@@ -147,8 +147,8 @@ public class MSDragObjects:MonoBehaviour {
 	}
 	//IS BUTTON PRESSED ??
 	void CheckButton(){
-		textMesh.text = VR_Controller.TriggerButton() + " \n " + canMove + " \n " + tempObject;
-		if((Input.GetKeyUp(KeyToMove) && tempObject) || (!VR_Controller.TriggerButton()) && tempObject) {	
+		textMesh.text = GameConfig.vr_controller.TriggerButton() + " \n " + canMove + " \n " + tempObject;
+		if((Input.GetKeyUp(KeyToMove) && tempObject) || (!GameConfig.vr_controller.TriggerButton()) && tempObject) {	
 			rbTemp.useGravity = true;
 			tempObject = null;
 			rbTemp = null;

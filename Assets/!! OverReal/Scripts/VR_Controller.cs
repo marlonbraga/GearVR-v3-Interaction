@@ -8,9 +8,10 @@ public class VR_Controller : MonoBehaviour {
 	void Awake() {
 		_VRInput = this;
 	}
-
+	VR_Controller vr_controller = new OculusController();
 	#region GearVR
-	static public bool TriggerButton() {
+	virtual public bool TriggerButton() {
+		vr_controller.TriggerButton();
 		if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
 			return true;
 		else
