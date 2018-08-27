@@ -118,14 +118,14 @@ public class MSDragObjects:MonoBehaviour {
 		MoveObject();
 	}
 	void TouchPad(){
-		if((VR_Controller.isTouch() && (!VR_Controller.TouchButton()))) {
+		if((GameConfiguration._VRInput.isTouch() && (!GameConfiguration._VRInput.TouchButton()))) {
 			//READ TOUCHPAD
-			if(VR_Controller.TouchGetDown()) {
-				initialtouchPosition = VR_Controller.TouchPoint();
-			} else if(VR_Controller.TouchGetUp()) {
+			if(GameConfiguration._VRInput.TouchGetDown()) {
+				initialtouchPosition = GameConfiguration._VRInput.TouchPoint();
+			} else if(GameConfiguration._VRInput.TouchGetUp()) {
 				initialtouchPosition = Vector2.zero;
 			}
-			Vector2 touchPosition = VR_Controller.TouchPoint();
+			Vector2 touchPosition = GameConfiguration._VRInput.TouchPoint();
 			Vector2 resultPosition = touchPosition - initialtouchPosition;
 
 			//DEADZONE
@@ -156,7 +156,7 @@ public class MSDragObjects:MonoBehaviour {
 		}
 	}
 	void Throwing(){
-		if((Input.GetKeyDown(KeyToThrowing) && tempObject) || (VR_Controller.TouchButton()) && (tempObject)) {
+		if((Input.GetKeyDown(KeyToThrowing) && tempObject) || (GameConfiguration._VRInput.TouchButton()) && (tempObject)) {
 			tempDirection = rayEndPoint - transform.position;
 			tempDirection.Normalize();
 			rbTemp.useGravity = true;
@@ -210,7 +210,7 @@ public class MSDragObjects:MonoBehaviour {
 		}
 	}
 	void PointAndClick() {
-		if((Input.GetKeyDown(KeyToMove) && canMove) || (VR_Controller.TriggerButtonDown() && canMove)) {
+		if((Input.GetKeyDown(KeyToMove) && canMove) || (GameConfiguration._VRInput.TriggerButtonDown() && canMove)) {
 			if(tempHit.rigidbody) {
 				tempHit.rigidbody.useGravity = true;
 				distance = Vector3.Distance(transform.position, tempHit.point);
