@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FootPrint:MonoBehaviour {
 	private Material material;
+	void OnEnable() {
+		AbleMovement();
+	}
 	void Start() {
 		material = GetComponent<MeshRenderer>().material;
 	}

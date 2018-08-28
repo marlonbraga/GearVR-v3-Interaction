@@ -4,49 +4,44 @@ using UnityEngine;
 
 public class VR_Controller : MonoBehaviour {
 
-	static public VR_Controller _VRInput;
-	void Awake() {
-		_VRInput = this;
-	}
-
 	#region GearVR
-	static public bool TriggerButton() {
+	virtual public bool TriggerButton() {
 		if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
 			return true;
 		else
 			return false;
 	}
-	static public bool TriggerButtonDown() {
+	virtual public bool TriggerButtonDown() {
 		if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
 			return true;
 		else
 			return false;
 	}
-	static public bool TouchButton() {
+	virtual public bool TouchButton() {
 		if(OVRInput.Get(OVRInput.Button.One))
 			return true;
 		else
 			return false;
 	}
-	static public bool isTouch() {
+	virtual public bool isTouch() {
 		if(OVRInput.Get(OVRInput.Touch.PrimaryTouchpad))
 			return true;
 		else
 			return false;
 	}
-	static public bool TouchGetDown() {
+	virtual public bool TouchGetDown() {
 		if(OVRInput.GetDown(OVRInput.Touch.PrimaryTouchpad))
 			return true;
 		else
 			return false;
 	}
-	static public bool TouchGetUp() {
+	virtual public bool TouchGetUp() {
 		if(OVRInput.GetUp(OVRInput.Touch.PrimaryTouchpad))
 			return true;
 		else
 			return false;
 	}
-	static public Vector2 TouchPoint() {
+	virtual public Vector2 TouchPoint() {
 		return OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
 	}
 	
