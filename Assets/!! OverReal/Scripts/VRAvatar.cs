@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class VRAvatar:MonoBehaviour {
 	[SerializeField]
 	private float minDistance = 1.5f;
-	public Material SceneCurtain;
 	public static VRAvatar _VRAvatar;
 	public bool canMove = false;
 	public AudioClip[] steps;
+	public Inventary inventary;
+	public InventaryMenu inventaryMenu;
 	private AudioSource audioSource;
 	private Coroutine coroutine;
 	void Start() {
@@ -25,6 +26,7 @@ public class VRAvatar:MonoBehaviour {
 		}
 	}
 	private IEnumerator Teleport(Vector3 newTarget) {
+		InventaryMenuClose();
 		transform.position = newTarget;
 		yield return new WaitForSeconds(0f);
 		foreach(var step in steps) {
@@ -34,5 +36,15 @@ public class VRAvatar:MonoBehaviour {
 				yield return new WaitForSeconds(0.01f);
 			}
 		}
+	}
+	void Update() {
+		if(GameConfiguration._VRInput.TouchButtonDown()) {
+			_VRAvatar.inventaryMenu.gameObject.transform.position = transform.position;
+			_VRAvatar.inventaryMenu.gameObject.transform.rotation = transform.rotation;
+			_VRAvatar.inventaryMenu.gameObject.SetActive(!inventaryMenu.gameObject.activeInHierarchy);
+		}
+	}
+	void InventaryMenuClose() {
+		_VRAvatar.inventaryMenu.gameObject.SetActive(false);
 	}
 }

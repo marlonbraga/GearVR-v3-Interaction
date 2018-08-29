@@ -50,5 +50,6 @@ public class VRWand:MonoBehaviour {
 					item.GetComponent<InteractiveObject>().PointDepress();
 			}
 		}
+		
 	}
 }
