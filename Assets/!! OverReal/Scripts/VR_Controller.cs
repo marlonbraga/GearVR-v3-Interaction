@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VR_Controller : MonoBehaviour {
+public abstract class VR_Controller : MonoBehaviour {
 
 	#region GearVR
 	virtual public bool TriggerButton() {
@@ -19,6 +19,18 @@ public class VR_Controller : MonoBehaviour {
 	}
 	virtual public bool TouchButton() {
 		if(OVRInput.Get(OVRInput.Button.One))
+			return true;
+		else
+			return false;
+	}
+	virtual public bool TouchButtonDown() {
+		if(OVRInput.GetDown(OVRInput.Button.One))
+			return true;
+		else
+			return false;
+	}
+	virtual public bool TouchButtonUp() {
+		if(OVRInput.GetUp(OVRInput.Button.One))
 			return true;
 		else
 			return false;
