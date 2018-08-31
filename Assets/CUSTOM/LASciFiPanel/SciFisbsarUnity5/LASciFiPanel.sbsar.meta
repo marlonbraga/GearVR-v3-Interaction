@@ -1,15 +1,13 @@
 fileFormatVersion: 2
 guid: 1335d7be75a32a8449a1f4bf6b5686ae
-timeCreated: 1533755962
-licenseType: Free
+timeCreated: 1444975998
+licenseType: Store
 SubstanceImporter:
-  externalObjects: {}
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
     name: LASciFiPanel
     prototypeName: LASciFiPanel
-    shaderName: 
     shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: _EMISSION _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
     renderQueue: -1
@@ -22,7 +20,6 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: $outputsize
       value:
         scalar[0]: 8
@@ -30,7 +27,6 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: $randomseed
       value:
         scalar[0]: 0
@@ -38,7 +34,6 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: uber
       value:
         scalar[0]: 0
@@ -46,23 +41,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: dirt
       value:
-        scalar[0]: 0.65
+        scalar[0]: .649999976
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: wear
       value:
-        scalar[0]: 0.85
+        scalar[0]: .850000024
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat1
       value:
         scalar[0]: 11
@@ -70,15 +62,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat1_custom
       value:
         scalar[0]: 0
-        scalar[1]: 0.485222
-        scalar[2]: 0.909804
+        scalar[1]: .485222012
+        scalar[2]: .909803987
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat2
       value:
         scalar[0]: 15
@@ -86,15 +76,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat2_custom
       value:
-        scalar[0]: 0.34131703
-        scalar[1]: 0.39219564
-        scalar[2]: 0.43382353
+        scalar[0]: .341317028
+        scalar[1]: .392195642
+        scalar[2]: .433823526
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat3
       value:
         scalar[0]: 6
@@ -102,15 +90,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat3_custom
       value:
-        scalar[0]: 0.207843
+        scalar[0]: .207843006
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat4
       value:
         scalar[0]: 11
@@ -118,15 +104,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat4_custom
       value:
-        scalar[0]: 0.858824
-        scalar[1]: 0.862745
-        scalar[2]: 0.862745
+        scalar[0]: .858824015
+        scalar[1]: .862744987
+        scalar[2]: .862744987
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat5
       value:
         scalar[0]: 12
@@ -134,15 +118,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat5_custom
       value:
-        scalar[0]: 0.30882353
-        scalar[1]: 0.30882353
-        scalar[2]: 0.30882353
+        scalar[0]: .308823526
+        scalar[1]: .308823526
+        scalar[2]: .308823526
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat7
       value:
         scalar[0]: 16
@@ -150,15 +132,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat7_custom
       value:
-        scalar[0]: 0.459297
-        scalar[1]: 0.500877
-        scalar[2]: 0.537255
+        scalar[0]: .459297001
+        scalar[1]: .500877023
+        scalar[2]: .537254989
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: mat6_custom
       value:
         scalar[0]: 0
@@ -166,15 +146,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: light1_custom
       value:
-        scalar[0]: 0.39705884
-        scalar[1]: 0.9750506
+        scalar[0]: .397058845
+        scalar[1]: .975050628
         scalar[2]: 1
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: decal1_custom
       value:
         scalar[0]: 0
@@ -182,15 +160,13 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: decal2_custom
       value:
         scalar[0]: 1
-        scalar[1]: 0.6
-        scalar[2]: 0.007843138
+        scalar[1]: .600000024
+        scalar[2]: .00784313772
         scalar[3]: 1
         texture: {instanceID: 0}
-        stringvalue: 
     - name: input_decal1
       value:
         scalar[0]: 0
@@ -198,7 +174,6 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {fileID: 2800000, guid: 06789d5ed842133429d742f745c4dcdc, type: 3}
-        stringvalue: 
     - name: input_decal2
       value:
         scalar[0]: 0
@@ -206,7 +181,6 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {fileID: 2800000, guid: 5b164a0a4d1e9114b929fc7293dd3d19, type: 3}
-        stringvalue: 
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -215,64 +189,129 @@ SubstanceImporter:
       generateAllOutputs: 0
       animationUpdateRate: 0
     materialProperties:
-      serializedVersion: 3
+      serializedVersion: 2
       texEnvs:
-      - _BumpMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _DetailAlbedoMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _DetailMask:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _DetailNormalMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _EmissionMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _MainTex:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _OcclusionMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _ParallaxMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _SpecGlossMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MainTex
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _BumpMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailNormalMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _ParallaxMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _OcclusionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _EmissionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailMask
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailAlbedoMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _SpecGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
-      - _BumpScale: 1
-      - _Cutoff: 0.5
-      - _DetailNormalMapScale: 1
-      - _DstBlend: 0
-      - _GlossMapScale: 1
-      - _Glossiness: 0.5
-      - _GlossyReflections: 1
-      - _Mode: 0
-      - _OcclusionStrength: 1
-      - _Parallax: 0.02
-      - _SmoothnessTextureChannel: 0
-      - _SpecularHighlights: 1
-      - _SrcBlend: 1
-      - _UVSec: 0
-      - _ZWrite: 1
+        data:
+          first:
+            name: _SrcBlend
+          second: 1
+        data:
+          first:
+            name: _DstBlend
+          second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
+        data:
+          first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
+            name: _ZWrite
+          second: 1
+        data:
+          first:
+            name: _Glossiness
+          second: .5
+        data:
+          first:
+            name: _BumpScale
+          second: 1
+        data:
+          first:
+            name: _OcclusionStrength
+          second: 1
+        data:
+          first:
+            name: _DetailNormalMapScale
+          second: 1
+        data:
+          first:
+            name: _UVSec
+          second: 0
+        data:
+          first:
+            name: _Mode
+          second: 0
       colors:
-      - _Color: {r: 1, g: 1, b: 1, a: 1}
-      - _EmissionColor: {r: 3, g: 3, b: 3, a: 1}
-      - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+        data:
+          first:
+            name: _EmissionColor
+          second: {r: 3, g: 3, b: 3, a: 1}
+        data:
+          first:
+            name: _Color
+          second: {r: 1, g: 1, b: 1, a: 1}
+        data:
+          first:
+            name: _SpecColor
+          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
     textureParameters:
     - name: LASciFiPanel_diffuse
       alphaSource: 6
@@ -305,22 +344,28 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp: _MainTex
+    - shaderProp:
+        name: _MainTex
       material: {instanceID: 0}
       baseUID: 932778175
-    - shaderProp: _BumpMap
+    - shaderProp:
+        name: _BumpMap
       material: {instanceID: 0}
       baseUID: 932778161
-    - shaderProp: _EmissionMap
-      material: {instanceID: 0}
-      baseUID: 932778123
-    - shaderProp: _OcclusionMap
-      material: {instanceID: 0}
-      baseUID: 932778125
-    - shaderProp: _ParallaxMap
+    - shaderProp:
+        name: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 912867125
-    - shaderProp: _SpecGlossMap
+    - shaderProp:
+        name: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 932778125
+    - shaderProp:
+        name: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 932778123
+    - shaderProp:
+        name: _SpecGlossMap
       material: {instanceID: 0}
       baseUID: 932778167
     buildTargetSettings:

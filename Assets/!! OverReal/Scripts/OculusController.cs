@@ -22,6 +22,18 @@ public class OculusController : VR_Controller {
 		else
 			return false;
 	}
+	override public bool TouchButtonDown() {
+		if(OVRInput.GetDown(OVRInput.Button.One))
+			return true;
+		else
+			return false;
+	}
+	override public bool TouchButtonUp() {
+		if(OVRInput.GetUp(OVRInput.Button.One))
+			return true;
+		else
+			return false;
+	}
 	override public bool isTouch() {
 		if(OVRInput.Get(OVRInput.Touch.PrimaryTouchpad))
 			return true;
@@ -43,6 +55,4 @@ public class OculusController : VR_Controller {
 	override public Vector2 TouchPoint() {
 		return OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
 	}
-
-
 }
