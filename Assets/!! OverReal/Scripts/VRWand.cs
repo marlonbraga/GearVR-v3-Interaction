@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Laser),typeof(VRAvatar))]
 public class VRWand:MonoBehaviour {
 
 	[Range(0, 10)]
 	public float maxDistance;
 	public GameObject footprint;
 	public static VRWand _VRWand;
-	private VRAvatar vrAvatar;
 	private InteractiveObject lastHit;
 	void Start() {
 		_VRWand = this;

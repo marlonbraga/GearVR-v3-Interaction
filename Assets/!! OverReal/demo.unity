@@ -6618,10 +6618,10 @@ GameObject:
   m_Component:
   - component: {fileID: 402773183}
   - component: {fileID: 662521825}
+  - component: {fileID: 662521827}
   - component: {fileID: 662521824}
   - component: {fileID: 662521823}
   - component: {fileID: 662521822}
-  - component: {fileID: 662521827}
   - component: {fileID: 662521826}
   m_Layer: 0
   m_Name: OVRPlayerController
@@ -6787,10 +6787,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 662521821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4f229c87aacea469a235dcc80fbb95, type: 3}
+  m_Script: {fileID: 11500000, guid: 753a1c85f0e10aa489ffb4d98e53806c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 2
+  minDistance: 1.5
   canMove: 0
   steps:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
@@ -12967,7 +12967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380357325}
   - component: {fileID: 1380357331}
-  - component: {fileID: 1380357326}
+  - component: {fileID: 1380357328}
   - component: {fileID: 1380357330}
   - component: {fileID: 1380357329}
   - component: {fileID: 1380357327}
@@ -12993,19 +12993,6 @@ Transform:
   m_Father: {fileID: 1274070228}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1380357326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380357324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5643d32e861399f4d9da71e301a577f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 10
-  footprint: {fileID: 1057968826}
 --- !u!82 &1380357327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13073,7 +13060,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -13086,6 +13073,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1380357328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380357324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ccdce564351754586d61b172bb3719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 1.61
+  footprint: {fileID: 1057968826}
 --- !u!114 &1380357329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13122,7 +13122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23aa809b299a81140b7b4a7618d9e0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corLaser: {r: 1, g: 1, b: 1, a: 0.478}
+  corLaser: {r: 1, g: 1, b: 1, a: 0.741}
   DistanciaDoLaser: 3
   LarguraInicial: 0.02
   LarguraFinal: 0.02
@@ -20027,7 +20027,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh25520
+  m_Name: pb_Mesh13470
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
