@@ -28,8 +28,6 @@ using System;
 /// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class OVRPlayerController:MonoBehaviour {
-	//apaga-me
-	public TextMesh textmesh;
 	
 	/// <summary>
 	/// The rate acceleration during movement.

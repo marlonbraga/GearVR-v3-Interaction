@@ -40,8 +40,6 @@ public class MSDragObjects:MonoBehaviour {
 	[Tooltip("The force with which the object can be moved. This variable only takes effect if the selected motion type is 'AddForce'.")]
 	public float moveForce = 200;
 
-	public TextMesh textMesh;
-
 	bool canMove;
 	bool isMoving;
 	float distance;
@@ -62,7 +60,6 @@ public class MSDragObjects:MonoBehaviour {
 	private bool distanceChange = false;
 
 	void Awake() {
-		textMesh.text = "000";
 		distance = (minDistance + maxDistance) / 2;
 		mainCamera = Camera.main;
 		if(!mainCamera) {
@@ -147,7 +144,6 @@ public class MSDragObjects:MonoBehaviour {
 	}
 	//IS BUTTON PRESSED ??
 	void CheckButton(){
-		textMesh.text = GameConfiguration._VRInput.TriggerButton() + " \n " + canMove + " \n " + tempObject;
 		if((Input.GetKeyUp(KeyToMove) && tempObject) || (!GameConfiguration._VRInput.TriggerButton()) && tempObject) {	
 			rbTemp.useGravity = true;
 			tempObject = null;
