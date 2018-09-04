@@ -7,6 +7,7 @@ public class ScenaryButton:ScenaryObject {
 	[SerializeField] protected Color pressingColor;
 	[SerializeField] protected Color pointingColor;
 	[SerializeField] protected Color disableColor;
+	[SerializeField] protected bool isSelected = false;
 	void Start() {
 		DebugScreen.debugScreen.AddWrite("START: ScenaryButton");
 	}
@@ -20,16 +21,20 @@ public class ScenaryButton:ScenaryObject {
 		Action();
 	}
 	public override void LaserEnter(RaycastHit hit) {
-		objectSelected = hit.collider.gameObject;
-		ChangeButtonColor(pointingColor);
-		PlaySFX(select);
-		Select();
-		//DebugScreen.debugScreen.Write("LaserEnter: ScenaryButton");
+		if(!isSelected) {
+			isSelected = true;
+			objectSelected = hit.collider.gameObject;
+			ChangeButtonColor(pointingColor);
+			PlaySFX(select);
+			Select();
+			DebugScreen.debugScreen.Write("LaserEnter: ScenaryButton");
+		}
 	}
 	public override void LaserExit() {
 		OnAble();
 		DebugScreen.debugScreen.AddWrite("LaserExit: ScenaryButton");
 		Unselect();
+		isSelected = false;
 	}
 	protected void onDisable() {
 		ChangeButtonColor(disableColor);
@@ -38,11 +43,12 @@ public class ScenaryButton:ScenaryObject {
 		objectSelected.GetComponent<MeshRenderer>().material.color = newColor;
 	}
 	protected void PlaySFX(AudioClip sfx) {
+		DebugScreen.debugScreen.AddWrite("PlaySFX: ScenaryButton");
 		GetComponent<AudioSource>().clip = sfx;
 		GetComponent<AudioSource>().loop = false;
 		GetComponent<AudioSource>().Play();
 	}
-	protected virtual void Action() {}
-	protected virtual void Select() {}
-	protected virtual void Unselect() {}
+	protected virtual void Action() { }
+	protected virtual void Select() { }
+	protected virtual void Unselect() { }
 }

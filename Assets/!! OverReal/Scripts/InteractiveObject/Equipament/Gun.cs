@@ -2,131 +2,80 @@
 using System.Collections;
 using System;
 
+[RequireComponent(typeof(AudioSource))]
 public class Gun :Equipament {
-	public GameObject Bullet;
-	public GameObject BulletEmitter;
-	public float Bullet_Forward_Force = 1f;
-	public float FireRate = 0.1f;
-	private bool FireAble = true;
-	public float precisionValue = 0.1f;
-	public bool automatic;
-	public GameObject muzzleFlash;
-	public GameObject muzzleLight;
-	//private FirstPersonController player;
-	private Camera camera;
-	private Animator animator;
-	private float aimDistance;
-	private float f;
-	private int CountBullets;
-	// private GameObject Temporary_Bullet_Handler;
-
-	void Start() {
+	[SerializeField] private GameObject Bullet;
+	[SerializeField] private GameObject BulletEmitter;
+	[SerializeField] private AudioClip ShootSound;
+	[SerializeField] private AudioClip TriggerSound;
+	[SerializeField] private float Bullet_Forward_Force = 1f;
+	[SerializeField] private float FireRate = 0.1f;
+	[SerializeField] private float precisionValue = 0.1f;
+	[HideInInspector] public bool FireAble = true;
+	[SerializeField] private bool automatic;
+	[SerializeField] private  GameObject muzzleFlash;
+	[SerializeField] private GameObject muzzleLight;
+	[SerializeField] private GameObject trigger;
+	float x = 0;
+	float y = 0;
+	float z = 0;
+	void Start() { 
 		FireAble = true;
 		muzzleFlash.SetActive(false);
 		muzzleLight.SetActive(false);
-		//player = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-		animator = GetComponent<Animator>();
-		f = gameObject.transform.localPosition.x;
-		CountBullets = 20; //transform.FindChild("MunitionScreen").FindChild("NumBalas").GetComponent<TextMesh>().text;
-    }
-	public void TweenedSomeValue(float val) {
-		aimDistance = val;
+		x = trigger.transform.localEulerAngles.x;
+		y = trigger.transform.localEulerAngles.y;
+		z = trigger.transform.localEulerAngles.z;
 	}
 	void Update() {
-		if (automatic) {
-			if ((Input.GetButton("Fire1")) && (FireAble == true)) {
-				atirar();
-			}
-		} else {
-			if ((Input.GetButton("Fire1"))) {
-				atirar();
-			}
-		}
-		if (Input.GetButtonDown("Aim")) {
-			
-			Debug.Log(gameObject.transform.localPosition);
-		}
-		if (Input.GetButtonUp("Aim")) {
-			float f = gameObject.transform.localPosition.x;
-			transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
-			Debug.Log(gameObject.transform.localPosition);
-		}
-
-		if ((Input.GetButton("Aim"))) {
-			//player.m_MouseLook.YSensitivity = 2;
-			//player.m_MouseLook.XSensitivity = 2;
-			if (camera.fieldOfView > 45) {
-				camera.fieldOfView -= 1 * Time.deltaTime * 80;
-			}
-
-			if (transform.localPosition.z > -0.18f) {
-				transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.05f * Time.deltaTime * 50);
-			}
-			if (transform.localPosition.z < -0.18f) {
-				transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.18f);
-			}
-			//animator.SetBool("Aim", true);
-		} else {
-			//player.m_MouseLook.YSensitivity = 5;
-			//player.m_MouseLook.XSensitivity = 5;
-			if (camera.fieldOfView < 60) {
-				camera.fieldOfView += 1 * Time.deltaTime * 80;
-			}
-
-			if (transform.localPosition.z > 0f) {
-				transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.05f * Time.deltaTime * 50);
-			} else if (transform.localPosition.z < 0f) {
-				transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0f);
-			}
-
-		}
+		if (automatic)
+			if (GameConfiguration._VRInput.TriggerButton() && (FireAble == true))
+				Fire();
+		else
+			if (GameConfiguration._VRInput.TriggerButtonDown())
+				Fire();
+		if(GameConfiguration._VRInput.TriggerButton() || Input.anyKey)
+			trigger.transform.localEulerAngles = new Vector3(x, y, z + 20);
+		else
+			trigger.transform.localEulerAngles = new Vector3(x, y, z);
 	}
-	void atirar() {
-		if (CountBullets>0) {
-			
-			GetComponent<AudioSource>().Play();
-
+	[ContextMenu("FIRE!")]
+	public void Fire() {
+		if (VRAvatar._VRAvatar.inventary.bullets > 0) {
 			FireAble = false;
 			StartCoroutine(chronometer(FireRate));
-			StartCoroutine(chronometer2(0.01f));
-
-			//GetComponent<Animator>().Play("Recoil");
-			//GetComponent<Animator>().SetBool("fire", true);
-
-			CountBullets--;
-			transform.Find("MunitionScreen").Find("NumBalas").GetComponent<TextMesh>().text = "" + CountBullets;
+			StartCoroutine(chronometer2(0.3f));
+			GetComponent<AudioSource>().clip = ShootSound;
+			GetComponent<AudioSource>().Play();
+			VRAvatar._VRAvatar.inventary.bullets--;
+			DebugScreen.debugScreen.AddWrite("Bullets: <#aa3333>"+ VRAvatar._VRAvatar.inventary.bullets + "</color>");
 
 			GameObject Temporary_Bullet_Handler;
 			Temporary_Bullet_Handler = Instantiate(Bullet, BulletEmitter.transform.position, BulletEmitter.transform.rotation) as GameObject;
 
-			Rigidbody Temporary_RigidBody;
-			Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
+			//Rigidbody Temporary_RigidBody;
+			//Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
 
-			Vector3 precisionFire = new Vector3(UnityEngine.Random.Range(-precisionValue, precisionValue), UnityEngine.Random.Range(-precisionValue, precisionValue), 0f);
-			Temporary_RigidBody.AddForce((-BulletEmitter.transform.right + precisionFire) * Bullet_Forward_Force);
+			//Vector3 precisionFire = new Vector3(UnityEngine.Random.Range(-precisionValue, precisionValue), UnityEngine.Random.Range(-precisionValue, precisionValue), 0f);
+			//Temporary_RigidBody.AddForce((-BulletEmitter.transform.right + precisionFire) * Bullet_Forward_Force);
 
 			Destroy(Temporary_Bullet_Handler, 3.0f);
+		} else {
+			GetComponent<AudioSource>().clip = TriggerSound;
+			GetComponent<AudioSource>().Play();
 		}
 	}
-
 	public IEnumerator chronometer2(float seconds) {
+		muzzleFlash.GetComponent<ParticleSystem>().Play();
 		muzzleFlash.SetActive(true);
 		muzzleLight.SetActive(true);
 		yield return new WaitForSeconds(seconds);
 		muzzleFlash.SetActive(false);
 		muzzleLight.SetActive(false);
+		muzzleFlash.GetComponent<ParticleSystem>().Stop();
 	}
 	public IEnumerator chronometer(float seconds) {
 		yield return new WaitForSeconds(seconds);
 		FireAble = true;
-		//GetComponent<Animator>().SetBool("fire", false);
 	}
-	void AddBullets(int bullets) {
-		CountBullets += bullets;
-		transform.Find("MunitionScreen").Find("NumBalas").GetComponent<TextMesh>().text = "" + CountBullets;
-	}
-	//public override void action(int value, int sender) {
-	//	AddBullets(value);
- //   }
 }

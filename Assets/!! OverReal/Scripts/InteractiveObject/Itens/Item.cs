@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
+public abstract class Item : InteractiveObject {
+	override public void PointClick() {
+		action();
+		GetComponent<AudioSource>().clip = click;
+		GetComponent<AudioSource>().Play();
+		GetComponent<MeshRenderer>().enabled = false;
+		Destroy(gameObject,3);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	virtual protected void action() {}
 }

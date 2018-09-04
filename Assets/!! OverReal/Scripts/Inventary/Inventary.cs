@@ -5,10 +5,21 @@ using UnityEngine;
 public class Inventary : MonoBehaviour {
 
 	//equipaments
-	bool wand = true;
-	bool gun = true;
+	public bool wand = true;
+	public bool gun = true;
 
 	//stuffs
-	int bullets = 0;
-	
+	public int bullets = 0;
+
+	//constructors
+	public Inventary() {
+		wand = true;
+		gun = false;
+		bullets = 0;
+	}
+	public Inventary(bool _wand, bool _gun, int _bullets) {
+		wand = _wand;
+		gun = _gun;
+		bullets = _bullets;
+	}
 }

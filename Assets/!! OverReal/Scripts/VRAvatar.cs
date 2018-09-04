@@ -10,13 +10,14 @@ public class VRAvatar:MonoBehaviour {
 	public static VRAvatar _VRAvatar;
 	public bool canMove = false;
 	public AudioClip[] steps;
-	public Inventary inventary;
+	[HideInInspector] public Inventary inventary;
 	[HideInInspector]
 	public Equipament equipamentInUse;
 	public InventaryMenu inventaryMenu;
 	private AudioSource audioSource;
 	private Coroutine coroutine;
 	void Start() {
+		inventary = new Inventary(true, true, 20);
 		_VRAvatar = this;
 		audioSource = GetComponent<AudioSource>();
 	}
