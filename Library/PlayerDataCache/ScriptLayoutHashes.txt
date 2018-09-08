@@ -24,7 +24,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 56441db03d5b4bb548b050e61dd1186e Assembly-CSharp.dll:cakeslice.OutlineEffect
 d79de92723477d704d7beb523a6d339a Assembly-UnityScript.dll:.ThirdPersonController
 7eb9591c7917a5f28a8f099a75401c22 Assembly-CSharp.dll:.MobileObject
-4426e0bce701b5cd45b8123ef66a2d10 Assembly-CSharp.dll:.InventaryMenu
+6b4bc5e556876d10dae192deb4a0a476 Assembly-CSharp.dll:.InventaryMenu
 5979728add95abdc642051d92f726e95 Assembly-CSharp.dll:.OVRDebugHeadController
 01edecf13d0a9e872de0d219f8eb3c5c Assembly-CSharp.dll:.OVRManager
 4686ab62ccf154cee7a712062250e00f Assembly-CSharp.dll:.SoundEmitter
@@ -161,7 +161,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-f0f045d294dd8c83c10e116f66a6aaf1 Assembly-CSharp.dll:.Gun
+ee61e7a4fe116f45b0700827194fd9c6 Assembly-CSharp.dll:.Gun
 28702e9cfa17ebb1a03614df6a1590ff Assembly-CSharp.dll:.ONSPProfiler
 201a74c04db670228d716f90f7c8c198 Assembly-CSharp.dll:.OVROverlay
 50a0fa002cfc67638c87a901e46b763e Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_B
@@ -362,6 +362,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 f3c364aec55edee7da35dae1232b8db0 Assembly-CSharp.dll:.InventoryButton
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.TextConsoleSimulator
 a8ed45ab553b07236625df6cc6ac449c Assembly-CSharp.dll:.OVRLint
+ab232dc3d94359ca42eabb9c72cbbb82 Assembly-CSharp.dll:.Bullet
 584795015275d7765225ad872c0e8bd8 Assembly-CSharp.dll:.OVRGrabber
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
 afc52d27c3ec0bd47909e81bd45fbffa Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
@@ -371,6 +372,7 @@ afc52d27c3ec0bd47909e81bd45fbffa Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
 2db25c4782f7d17f2d71bf5375fd6179 Assembly-CSharp.dll:.TestScript
 ebea05008614802cd520140e3ee3434a Assembly-CSharp.dll:.Inventary
 020550babdb991365f61c5bffe1f4f52 Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
+5b5af29abb88111d36cdd06d100b60d2 Assembly-CSharp.dll:.Munition
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DebugScreen
 26215f135eeb48d8fa1189498c107f6c Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
@@ -447,5 +449,3 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
-ab232dc3d94359ca42eabb9c72cbbb82 Assembly-CSharp.dll:.Bullet
-5b5af29abb88111d36cdd06d100b60d2 Assembly-CSharp.dll:.Munition

@@ -22,6 +22,7 @@ public class VRAvatar:MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 	}
 	public void Movement(Vector3 newTarget) {
+		DebugScreen.debugScreen.AddWrite("<color=yellow>VRAvatar: Movement()</color>");
 		if(canMove) {
 			if(coroutine != null)
 				StopCoroutine(coroutine);
@@ -29,6 +30,8 @@ public class VRAvatar:MonoBehaviour {
 		}
 	}
 	private IEnumerator Teleport(Vector3 newTarget) {
+		DebugScreen.debugScreen.AddWrite("<color=yellow>VRAvatar: Teleport()</color>");
+
 		InventaryMenuClose();
 		transform.position = newTarget;
 		yield return new WaitForSeconds(0f);

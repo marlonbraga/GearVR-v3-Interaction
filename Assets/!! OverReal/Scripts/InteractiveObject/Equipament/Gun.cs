@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 [RequireComponent(typeof(AudioSource))]
-public class Gun :Equipament {
+public class Gun:Equipament {
 	[SerializeField] private GameObject Bullet;
 	[SerializeField] private GameObject BulletEmitter;
 	[SerializeField] private AudioClip ShootSound;
@@ -13,13 +13,13 @@ public class Gun :Equipament {
 	[SerializeField] private float precisionValue = 0.1f;
 	[HideInInspector] public bool FireAble = true;
 	[SerializeField] private bool automatic;
-	[SerializeField] private  GameObject muzzleFlash;
+	[SerializeField] private GameObject muzzleFlash;
 	[SerializeField] private GameObject muzzleLight;
 	[SerializeField] private GameObject trigger;
 	float x = 0;
 	float y = 0;
 	float z = 0;
-	void Start() { 
+	void Start() {
 		FireAble = true;
 		muzzleFlash.SetActive(false);
 		muzzleLight.SetActive(false);
@@ -27,13 +27,22 @@ public class Gun :Equipament {
 		y = trigger.transform.localEulerAngles.y;
 		z = trigger.transform.localEulerAngles.z;
 	}
+	private void OnEnable() {
+		StartCoroutine(chronometer(1.5F));
+		muzzleFlash.SetActive(false);
+		muzzleLight.SetActive(false);
+		muzzleFlash.GetComponent<ParticleSystem>().Stop();
+	}
 	void Update() {
-		if (automatic)
-			if (GameConfiguration._VRInput.TriggerButton() && (FireAble == true))
+		if(automatic) {
+			if(GameConfiguration._VRInput.TriggerButton() && (FireAble == true)) {
 				Fire();
-		else
-			if (GameConfiguration._VRInput.TriggerButtonDown())
+			}
+		} else {
+			if(GameConfiguration._VRInput.TriggerButtonDown()) {
 				Fire();
+			}
+		}
 		if(GameConfiguration._VRInput.TriggerButton() || Input.anyKey)
 			trigger.transform.localEulerAngles = new Vector3(x, y, z + 20);
 		else
@@ -41,14 +50,15 @@ public class Gun :Equipament {
 	}
 	[ContextMenu("FIRE!")]
 	public void Fire() {
-		if (VRAvatar._VRAvatar.inventary.bullets > 0) {
+		DebugScreen.debugScreen.AddWrite("Gun: <color=red>Fire()</color>");
+		if(VRAvatar._VRAvatar.inventary.bullets > 0) {
 			FireAble = false;
 			StartCoroutine(chronometer(FireRate));
 			StartCoroutine(chronometer2(0.3f));
 			GetComponent<AudioSource>().clip = ShootSound;
 			GetComponent<AudioSource>().Play();
 			VRAvatar._VRAvatar.inventary.bullets--;
-			DebugScreen.debugScreen.AddWrite("Bullets: <#aa3333>"+ VRAvatar._VRAvatar.inventary.bullets + "</color>");
+			DebugScreen.debugScreen.AddWrite("Bullets: <#aa3333>" + VRAvatar._VRAvatar.inventary.bullets + "</color>");
 
 			GameObject Temporary_Bullet_Handler;
 			Temporary_Bullet_Handler = Instantiate(Bullet, BulletEmitter.transform.position, BulletEmitter.transform.rotation) as GameObject;

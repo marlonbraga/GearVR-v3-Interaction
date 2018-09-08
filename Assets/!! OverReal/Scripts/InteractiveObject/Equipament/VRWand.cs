@@ -23,6 +23,7 @@ public class VRWand:Equipament {
 				lastHit = hit.collider.gameObject.GetComponent<InteractiveObject>();
 				lastHit.LaserEnter(hit);
 				if(GameConfiguration._VRInput.TriggerButtonDown()) {
+					lastHit.PointClick(hit.point);
 					lastHit.PointClick();
 					lastHit.PointPress();
 				}
