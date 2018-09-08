@@ -10,15 +10,19 @@ public class VRAvatar:MonoBehaviour {
 	public static VRAvatar _VRAvatar;
 	public bool canMove = false;
 	public AudioClip[] steps;
-	public Inventary inventary;
+	[HideInInspector] public Inventary inventary;
+	[HideInInspector]
+	public Equipament equipamentInUse;
 	public InventaryMenu inventaryMenu;
 	private AudioSource audioSource;
 	private Coroutine coroutine;
 	void Start() {
+		inventary = new Inventary(true, true, 20);
 		_VRAvatar = this;
 		audioSource = GetComponent<AudioSource>();
 	}
 	public void Movement(Vector3 newTarget) {
+		DebugScreen.debugScreen.AddWrite("<color=yellow>VRAvatar: Movement()</color>");
 		if(canMove) {
 			if(coroutine != null)
 				StopCoroutine(coroutine);
@@ -26,6 +30,8 @@ public class VRAvatar:MonoBehaviour {
 		}
 	}
 	private IEnumerator Teleport(Vector3 newTarget) {
+		DebugScreen.debugScreen.AddWrite("<color=yellow>VRAvatar: Teleport()</color>");
+
 		InventaryMenuClose();
 		transform.position = newTarget;
 		yield return new WaitForSeconds(0f);
@@ -46,5 +52,25 @@ public class VRAvatar:MonoBehaviour {
 	}
 	void InventaryMenuClose() {
 		_VRAvatar.inventaryMenu.gameObject.SetActive(false);
+		EquipItem(equipamentInUse);
+	}
+	public void EquipItem(Equipament equipament) {
+		equipamentInUse = equipament;
+		UnequipAll(transform);
+		equipament.gameObject.SetActive(true);
+		DebugScreen.debugScreen.AddWrite("<#dd3333>" + equipament.name + "</color> Equiped");
+		_VRAvatar.inventaryMenu.gameObject.SetActive(false);
+	}
+	[ContextMenu("UnequipAll")]
+	public void UnequipAll(Transform parent) {
+		foreach(Transform child in parent) {
+			if(child.GetComponent<Equipament>())
+				child.gameObject.SetActive(false);
+			else
+				UnequipAll(child);
+		}
+	}
+	public void UnequipAll() {
+		UnequipAll(transform);
 	}
 }

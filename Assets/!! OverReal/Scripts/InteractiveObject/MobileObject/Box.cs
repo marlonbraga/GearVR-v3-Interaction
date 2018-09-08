@@ -11,7 +11,7 @@ public class Box:MobileObject {
 		audiosource = GetComponent<AudioSource>();
 		status = Status.none;
 	}
-	override public void PointClick(Vector3 vector3) {
+	override public void PointClick() {
 		audiosource.clip = click;
 		audiosource.Play();
 	}

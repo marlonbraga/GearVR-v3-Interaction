@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Floor:InteractiveObject {
@@ -25,6 +23,7 @@ public class Floor:InteractiveObject {
 		VRWand._VRWand.footprint.SetActive(false);
 	}
 	public override void PointClick(Vector3 target) {
+		DebugScreen.debugScreen.AddWrite("<color=yellow>Floor: PointClick()</color>");
 		if(Vector3.Distance(target, VRWand._VRWand.transform.position) < 5)
 			VRAvatar._VRAvatar.Movement(target);
 	}
