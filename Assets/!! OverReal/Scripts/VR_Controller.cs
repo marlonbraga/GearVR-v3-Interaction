@@ -17,14 +17,26 @@ public abstract class VR_Controller : MonoBehaviour {
 		else
 			return false;
 	}
-	virtual public bool TouchButton() {
+	virtual public bool TouchButton1() {
 		if(OVRInput.Get(OVRInput.Button.One))
 			return true;
 		else
 			return false;
 	}
-	virtual public bool TouchButtonDown() {
+	virtual public bool TouchButton1Down() {
 		if(OVRInput.GetDown(OVRInput.Button.One))
+			return true;
+		else
+			return false;
+	}
+	virtual public bool TouchButton2() {
+		if(OVRInput.Get(OVRInput.Button.Two))
+			return true;
+		else
+			return false;
+	}
+	virtual public bool TouchButton2Down() {
+		if(OVRInput.GetDown(OVRInput.Button.Two))
 			return true;
 		else
 			return false;

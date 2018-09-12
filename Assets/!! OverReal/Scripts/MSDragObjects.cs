@@ -115,7 +115,7 @@ public class MSDragObjects:MonoBehaviour {
 		MoveObject();
 	}
 	void TouchPad(){
-		if((GameConfiguration._VRInput.isTouch() && (!GameConfiguration._VRInput.TouchButton()))) {
+		if((GameConfiguration._VRInput.isTouch() && (!GameConfiguration._VRInput.TouchButton1()))) {
 			//READ TOUCHPAD
 			if(GameConfiguration._VRInput.TouchGetDown()) {
 				initialtouchPosition = GameConfiguration._VRInput.TouchPoint();
@@ -152,7 +152,7 @@ public class MSDragObjects:MonoBehaviour {
 		}
 	}
 	void Throwing(){
-		if((Input.GetKeyDown(KeyToThrowing) && tempObject) || (GameConfiguration._VRInput.TouchButton()) && (tempObject)) {
+		if((Input.GetKeyDown(KeyToThrowing) && tempObject) || (GameConfiguration._VRInput.TouchButton1()) && (tempObject)) {
 			tempDirection = rayEndPoint - transform.position;
 			tempDirection.Normalize();
 			rbTemp.useGravity = true;

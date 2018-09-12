@@ -17,15 +17,20 @@ public class VRWand:Equipament {
 		Vector3 fwd = transform.TransformDirection(Vector3.forward * maxDistance);
 		Ray ray = new Ray(transform.position, fwd);
 
-		RaycastHit hit;
+		RaycastHit hit; 
 		if(Physics.Raycast(ray, out hit, 200)) {
 			if(hit.collider.gameObject.GetComponent<InteractiveObject>()) {
 				lastHit = hit.collider.gameObject.GetComponent<InteractiveObject>();
 				lastHit.LaserEnter(hit);
 				if(GameConfiguration._VRInput.TriggerButtonDown()) {
-					lastHit.PointClick(hit.point);
 					lastHit.PointClick();
 					lastHit.PointPress();
+				}
+				if(GameConfiguration._VRInput.TouchButton1Down()) {
+					float touchX = GameConfiguration._VRInput.TouchPoint().x;
+					if(touchX > -0.8f && touchX < 0.8f) {
+						lastHit.PointClick(hit.point);
+					}
 				}
 			} else {
 				//Laser._Laser.ResetColor();

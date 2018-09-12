@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class VRAvatar:MonoBehaviour {
-	[SerializeField]
-	private float minDistance = 1.5f;
+	[SerializeField] private float minDistance = 1.5f;
 	public static VRAvatar _VRAvatar;
 	public bool canMove = false;
 	public AudioClip[] steps;
 	[HideInInspector] public Inventary inventary;
-	[HideInInspector]
-	public Equipament equipamentInUse;
+	[HideInInspector] public Equipament equipamentInUse;
 	public InventaryMenu inventaryMenu;
 	private AudioSource audioSource;
 	private Coroutine coroutine;
+	[HideInInspector] private float snapTuringAngle = 45;
 	void Start() {
 		inventary = new Inventary(true, true, 20);
 		_VRAvatar = this;
@@ -30,8 +29,6 @@ public class VRAvatar:MonoBehaviour {
 		}
 	}
 	private IEnumerator Teleport(Vector3 newTarget) {
-		DebugScreen.debugScreen.AddWrite("<color=yellow>VRAvatar: Teleport()</color>");
-
 		InventaryMenuClose();
 		transform.position = newTarget;
 		yield return new WaitForSeconds(0f);
@@ -43,12 +40,29 @@ public class VRAvatar:MonoBehaviour {
 			}
 		}
 	}
-	void Update() {
-		if(GameConfiguration._VRInput.TouchButtonDown()) {
+	protected void generalControllers() {
+		//Inventory
+		if(GameConfiguration._VRInput.TouchButton2Down()) {
+			DebugScreen.debugScreen.AddWrite("Inventory");
 			_VRAvatar.inventaryMenu.gameObject.transform.position = transform.position;
 			_VRAvatar.inventaryMenu.gameObject.transform.rotation = transform.rotation;
-			_VRAvatar.inventaryMenu.gameObject.SetActive(!inventaryMenu.gameObject.activeInHierarchy);
+			_VRAvatar.inventaryMenu.gameObject.SetActive(!_VRAvatar.inventaryMenu.gameObject.activeInHierarchy);
 		}
+		//SnapTuring
+		if(GameConfiguration._VRInput.TouchButton1Down()) {
+			float touchX = GameConfiguration._VRInput.TouchPoint().x;
+
+			if(touchX >= -1.0f && touchX < -0.8f) {
+				DebugScreen.debugScreen.AddWrite("SnapTuring: <color=yellow>Left</color>");
+				_VRAvatar.transform.Rotate(0, -snapTuringAngle, 0);
+			} else if(touchX > 0.8f && touchX <= 1.0f) {
+				DebugScreen.debugScreen.AddWrite("SnapTuring: <color=yellow>Right</color>");
+				_VRAvatar.transform.Rotate(0, +snapTuringAngle, 0);
+			}
+		}
+	}
+	void Update() {
+		generalControllers();
 	}
 	void InventaryMenuClose() {
 		_VRAvatar.inventaryMenu.gameObject.SetActive(false);

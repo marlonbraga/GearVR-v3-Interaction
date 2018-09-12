@@ -11351,7 +11351,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh66842
+  m_Name: pb_Mesh36570
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -13362,12 +13362,13 @@ GameObject:
   - component: {fileID: 1197791547}
   - component: {fileID: 1197791546}
   - component: {fileID: 1197791549}
+  - component: {fileID: 1197791548}
   m_Layer: 0
   m_Name: InventoryButton(gun)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!64 &1197791540
 MeshCollider:
@@ -13377,7 +13378,7 @@ MeshCollider:
   m_GameObject: {fileID: 1197791539}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -13627,6 +13628,18 @@ MonoBehaviour:
   disableColor: {r: 0.6117647, g: 0, b: 0, a: 0.5294118}
   isSelected: 0
   equipament: {fileID: 1108180994}
+--- !u!65 &1197791548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197791539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16083103, y: 0.42829084, z: 0.6272001}
+  m_Center: {x: 0.30795917, y: -0.018625736, z: -0.8136001}
 --- !u!54 &1197791549
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27508,7 +27521,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh71168
+  m_Name: pb_Mesh36670
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -27958,7 +27971,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh71140
+  m_Name: pb_Mesh41014
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -28088,7 +28101,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh70600
+  m_Name: pb_Mesh36102
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -28218,7 +28231,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh70568
+  m_Name: pb_Mesh40442
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
